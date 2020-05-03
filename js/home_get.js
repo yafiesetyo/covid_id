@@ -21,7 +21,11 @@ function get_province(){
         success : function(data) {
             console.log(data[0].attributes.Provinsi);
             $.each(data,function(i,val){
-                
+                $("#province").append(`<tr>
+                <td>`+data[i].attributes.Provinsi+`</td>
+                <td>`+data[i].attributes.Kasus_Meni+`</td>
+                <td>`+data[i].attributes.Kasus_Semb+`</td>
+                <td>`+data[i].attributes.Kasus_Posi+`</td></tr>`);
             });
             
         }
