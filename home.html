@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,35 +9,50 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/home_script.js"></script>
     <script src="js/home_get.js"></script>
+    <link rel="icon" href="./assets/covid1.jpg">
 </head>
 <style type="text/css">
-    body,html{height:100%}
-    .navbar{background-color:rgba(0,0,0,.60)}@media only screen and (max-width:768px){.navbar{background-color:#1C2331}}
-
-    .navbar{
+    body,
+    html {
+        height: 100%
+    }
+    
+    .navbar {
+        background-color: rgba(0, 0, 0, .60)
+    }
+    
+    @media only screen and (max-width:768px) {
+        .navbar {
+            background-color: #1C2331
+        }
+    }
+    
+    .navbar {
         padding: 15px;
     }
-
-    .landing-pict{
+    
+    .landing-pict {
         position: relative;
         color: white;
     }
-    .text-pict{
+    
+    .text-pict {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-
     }
-    .text-pict2{
+    
+    .text-pict2 {
         font-size: 18px;
     }
-    .btn-pict{
-        border:none;
+    
+    .btn-pict {
+        border: none;
         cursor: pointer;
         padding: 7px 12px;
         background-color: #F5F5F5;
@@ -49,78 +65,84 @@
         transition-duration: 0.4s;
         transition: 0.4;
     }
-    .btn-pict:hover{
-        background-color: white; 
-        color: black; 
+    
+    .btn-pict:hover {
+        background-color: white;
+        color: black;
         transition: 0.4;
         /*border: 2px solid #f44336;*/
-        background-color:#53F44F;
+        background-color: #53F44F;
     }
-
+    .warna {
+        color: black solid;
+        font-weight: bold;
+    }
+    
+    .warna1 {
+        color: grey;
+    }
 </style>
+
 <body>
-<div class="landing-pict">
-    <img src="./assets/covid1.jpg" alt="virus-covid-19" style="width: 100%; height: 700px;">
-    <div class="text-pict">
-        <h1 style="text-transform: uppercase;">informasi covid-19 indonesia </h1>
-        <p class="text-pict2">update penyebaran virus covid-19</p>
-        <button type="button" class="btn-pict">READ MORE</button>
+    <div class="landing-pict">
+        <img src="./assets/covid1.jpg" alt="virus-covid-19" style="width: 100%; height: 700px;">
+        <div class="text-pict">
+            <h1 style="text-transform: uppercase;">informasi covid-19 indonesia </h1>
+            <p class="text-pict2">update penyebaran virus covid-19</p>
+            <button type="button" class="btn-pict">READ MORE</button>
+        </div>
     </div>
-</div>
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
 
-      <!-- Brand -->
-      <a class="navbar-brand" href="#" target="_blank">
-        <strong>COV.ID</strong>
-      </a>
+        <!-- Brand -->
+        <a class="navbar-brand" href="#" target="_blank">
+            <strong>COV.ID</strong>
+        </a>
 
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <!-- Left -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="#">Home
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" target="_blank">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" target="_blank">Infographics</a>
-          </li>
-        </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" target="_blank">Infographics</a>
+                </li>
+            </ul>
 
-        <!-- Right -->
-        <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item">
-            <a href="#" class="nav-link" target="_blank">
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" target="_blank">
               Github
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link" target="_blank">
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" target="_blank">
               Developer
             </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link border border-light rounded"
-              target="_blank">
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link border border-light rounded" target="_blank">
               Download
             </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-</nav>
-
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
 
     <!-- Navigation Bar -->
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -137,60 +159,106 @@
         </div>
       </nav> -->
 
-      <!-- Header Content And Overall Numbers  -->
-      <div class="container mt-5">
+    <!-- Header Content And Overall Numbers  -->
+     <div class="container mt-5">
         <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-                Info Covid Di Indonesia
+            <div class="col-12">
+                <h2 class="warna">Info Covid <b><span class="warna1"> Di Indonesia</span><span style="color: orange">.</span></b></h2>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <table>
+                    <thead>
+                        <td>Tanggal :</td>
+                        <th id="date"></th>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <br>
         <div class="row ">
-            <div class="col-md-4 mb-2 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-3 mb-2 ">
+                <div class="card " style="width: 17rem;background-color: #66CDAA">
                     <div class="card-body">
                         <h5 class="card-title">Total Terinfeksi</h5>
-                        <p class="card-text" id="infects"></p>
+                        <img src="./assets/square.png" class="float-right" style="height: 3rem; margin-top: -30px;">
+                        <p class="card-text" id="infects"> </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-2 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-3 mb-2">
+                <div class="card " style="width: 17rem;background-color: #FA8072">
                     <div class="card-body">
                         <h5 class="card-title">Meninggal</h5>
+                        <img src="./assets/square.png" class="float-right" style="height: 3rem; margin-top: -30px;">
                         <p class="card-text" id="death"></p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-2 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+            <div class="col-md-3 mb-2 ">
+                <div class="card " style="width: 17rem;background-color: #FFD700">
                     <div class="card-body">
                         <h5 class="card-title">Sembuh</h5>
+                        <img src="./assets/square.png" class="float-right" style="height: 3rem; margin-top: -30px;">
                         <p class="card-text" id="recover"></p>
                     </div>
                 </div>
             </div>
-        </div>
-        <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;"> 
-        <!-- Tables  -->
-        <div class="row">
-            <div class="col-12 d-flex justify-content-center" style="overflow: auto;
-            display:inline-block;max-height: 300px;">
-                <table class="table">
-                    <thead class="thead-light sticky-top">
-                        <tr>
-                            <th scope="col">Provinsi</th>
-                            <th scope="col">Meninggal</th>
-                            <th scope="col">Sembuh</th>
-                            <th scope="col">Jumlah Terinfeksi</th>
-                        </tr>
-                    </thead>
-                    <tbody id="province">
-
-                    </tbody>
-                </table>
+            <div class="col-md-3 mb-2">
+                <div class="card" style="width: 17rem;background-color: #E3CF57">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Kasus Perhari</h5>
+                        <img src="./assets/square.png" class="float-right" style="height: 3rem; margin-top: -30px;">
+                        <p class="card-text" id="now"></p>
+                    </div>
+                </div>
             </div>
         </div>
-        <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;"> 
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
+        <!-- Tables  -->
+        <br>
+        <h3 class="warna">Sebaran Kasus Provinsi<b><span style="color: orange">.</span></b></h3>
+        <div>
+            <form>
+                <div class="form-row">
+                    <div class="col">
+
+                    </div>
+                    <div class="input-group mb-3 input-group-sm" style="width: 35%;">
+                        <strong>
+                            <p style="padding-right: 15px; color: grey;">Search by nama</p>
+                        </strong>
+                        <input type="text" class="form-control" id="input" onkeyup="get_prov()" placeholder="Cari Provinsi berdasarkan nama" style="margin-right: 1.2rem;">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="row">
+            <div class="card" style="width: 67rem; margin-left: 2.5rem;">
+                <div class="card-body">
+
+                    <div class="col-12 d-flex justify-content-center">
+                        <table class="table table-fixed" id="tabel">
+                            <thead class="thead-dark sticky-top">
+                                <tr>
+                                    <th scope="col">Provinsi</th>
+                                    <th scope="col">Meninggal</th>
+                                    <th scope="col">Sembuh</th>
+                                    <th scope="col">Jumlah Terinfeksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="province">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
 
         <!-- Pie Chart -->
         <div class="row">
@@ -198,6 +266,6 @@
                 <div id="pie" style="width: 900px; height: 500px;"></div>
             </div>
         </div>
-      </div>
+    </div>
 </body>
 </html>
