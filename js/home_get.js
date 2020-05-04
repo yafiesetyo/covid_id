@@ -19,6 +19,7 @@ function get_province(){
         method : 'GET',
         dataType : 'JSON',
         success : function(data) {
+            console.log(data[0].attributes.Provinsi);
             $.each(data,function(i,val){
                 $("#province").append(`<tr>
                 <td>`+data[i].attributes.Provinsi+`</td>
@@ -33,4 +34,3 @@ function get_province(){
 
 get_indo();
 get_province();
-
