@@ -12,9 +12,118 @@
     <script src="js/home_script.js"></script>
     <script src="js/home_get.js"></script>
 </head>
+<style type="text/css">
+    body,html{height:100%}
+    .navbar{background-color:rgba(0,0,0,.60)}@media only screen and (max-width:768px){.navbar{background-color:#1C2331}}
+
+    .navbar{
+        padding: 15px;
+    }
+
+    .landing-pict{
+        position: relative;
+        color: white;
+    }
+    .text-pict{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+    }
+    .text-pict2{
+        font-size: 18px;
+    }
+    .btn-pict{
+        border:none;
+        cursor: pointer;
+        padding: 7px 12px;
+        background-color: #F5F5F5;
+        color: black;
+        font-size: 12px;
+        border-radius: 5px;
+        font-size: 16px;
+        text-transform: uppercase;
+        display: inline-block;
+        transition-duration: 0.4s;
+        transition: 0.4;
+    }
+    .btn-pict:hover{
+        background-color: white; 
+        color: black; 
+        transition: 0.4;
+        /*border: 2px solid #f44336;*/
+        background-color:#53F44F;
+    }
+
+</style>
 <body>
+<div class="landing-pict">
+    <img src="./assets/covid1.jpg" alt="virus-covid-19" style="width: 100%; height: 700px;">
+    <div class="text-pict">
+        <h1 style="text-transform: uppercase;">informasi covid-19 indonesia </h1>
+        <p class="text-pict2">update penyebaran virus covid-19</p>
+        <button type="button" class="btn-pict">READ MORE</button>
+    </div>
+</div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#" target="_blank">
+        <strong>COV.ID</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" target="_blank">Infographics</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="#" class="nav-link" target="_blank">
+              Github
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" target="_blank">
+              Developer
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link border border-light rounded"
+              target="_blank">
+              Download
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">COV.ID</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -26,7 +135,7 @@
             <a class="nav-item nav-link" href="#">Incoming content...</a>
           </div>
         </div>
-      </nav>
+      </nav> -->
 
       <!-- Header Content And Overall Numbers  -->
       <div class="container mt-5">
