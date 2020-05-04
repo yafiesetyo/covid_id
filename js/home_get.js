@@ -18,17 +18,16 @@ function get_indo(){
 
 function get_province(){
     $.ajax({
-        url : 'https://api.kawalcorona.com/indonesia/provinsi/',
+        url : 'https://eligiblestore.com/api/covid19id/',
         method : 'GET',
         dataType : 'JSON',
         success : function(data) {
-            console.log(data[0].attributes.Provinsi);
             $.each(data,function(i,val){
                 $("#province").append(`<tr>
-                <td>`+data[i].attributes.Provinsi+`</td>
-                <td>`+data[i].attributes.Kasus_Meni+`</td>
-                <td>`+data[i].attributes.Kasus_Semb+`</td>
-                <td>`+data[i].attributes.Kasus_Posi+`</td></tr>`);
+                <td>`+data[i].Provinsi+`</td>
+                <td>`+data[i]['Kasus Meninggal']+`</td>
+                <td>`+data[i]['Kasus Sembuh']+`</td>
+                <td>`+data[i]['Kasus Positif']+`</td></tr>`);
             });
             
         }

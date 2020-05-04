@@ -1,44 +1,55 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawPie);
-
-
+  
 function drawPie(){
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawPie);
-    
-    function drawPie(){
-    
-        var jsonData = $.ajax({
-            url : 'https://api.kawalcorona.com/indonesia/provinsi/',
-            method : 'GET',
-            dataType : 'JSON',
-            async : false
-        });
-    
-        jsonData = jsonData.responseJSON;
-    
-        var others = 0;
-        for (i=4; i<jsonData.length;i++){
-            others += jsonData[i].attributes.Kasus_Posi;
-        }
-    
-        var data = google.visualization.arrayToDataTable([
-            ['Provinsi','Jumlah Positif'],
-            [jsonData[0].attributes.Provinsi,jsonData[0].attributes.Kasus_Posi],
-            [jsonData[1].attributes.Provinsi,jsonData[1].attributes.Kasus_Posi],
-            [jsonData[2].attributes.Provinsi,jsonData[2].attributes.Kasus_Posi],
-            [jsonData[3].attributes.Provinsi,jsonData[3].attributes.Kasus_Posi],
-            [jsonData[4].attributes.Provinsi,jsonData[4].attributes.Kasus_Posi],
-            ['lainnya',others]
-        ]);
+
+    // get JSON data
+    var jsonData = $.ajax({
+        url : 'https://eligiblestore.com/api/covid19id/',
+        method : 'GET',
+        dataType : 'JSON',
+        async : false
+    });
+    jsonData = jsonData.responseJSON;
+    // end section
+
+    //Fetch provinces name and their positive number
+    var arr_prov = []
+    var others = 0;
+    for ( i = 0; i < jsonData.length; i++) {
+        arr_prov.push([jsonData[i].Provinsi,jsonData[i]['Kasus Positif']]); 
+    }
+    //end section
+
+    //sort based positive numbers (get top 5 and others will counted)
+    arr_prov.sort(function(a,b){
+        return b[1]-a[1]
+    });
+
+    for (index = 5; index < arr_prov.length; index++) {
+        others += arr_prov[index][1];  
+    }
+    console.log(others);
+    // end section
+
+    var data = google.visualization.arrayToDataTable([
+        ['Provinsi','Jumlah Positif'],
+        [arr_prov[0][0],parseInt(arr_prov[0][1])],
+        [arr_prov[1][0],parseInt(arr_prov[1][1])],
+        [arr_prov[2][0],parseInt(arr_prov[2][1])],
+        [arr_prov[3][0],parseInt(arr_prov[3][1])],
+        [arr_prov[4][0],parseInt(arr_prov[4][1])],
+        ['Lainnya',others]
+    ]);
         // var options ={
         //     is3D:true
         // }
-        var chart = new google.visualization.PieChart(document.getElementById('pie'));
-        chart.draw(data);
-    }
-    
-    
-    
-    
+    var chart = new google.visualization.PieChart(document.getElementById('pie'));
+    chart.draw(data);
 }
+
+
+    
+    
+    
+    
