@@ -34,7 +34,8 @@ function get_province(){
         }
     });
 }
-function get_prov() {
+
+function search_province() {
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("input");
             filter = input.value.toUpperCase();
@@ -55,4 +56,4 @@ function get_prov() {
 
 get_indo();
 get_province();
-get_prov()
+search_province();
