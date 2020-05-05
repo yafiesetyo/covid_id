@@ -81,15 +81,30 @@
     .warna1 {
         color: grey;
     }
+    .animasi_teks
+    {
+        font-size: 33px;
+        color: white;
+        width: 740px;
+        font-weight: bold;
+        text-transform: uppercase;
+        white-space:nowrap;
+        overflow:hidden;
+        animation: tulis 7s steps(50, end);
+    }
+    @keyframes tulis{
+            from { width: 0; }
+    }
 </style>
 
 <body>
     <div class="landing-pict">
         <img src="./assets/covid1.jpg" alt="virus-covid-19" style="width: 100%; height: 700px;">
         <div class="text-pict">
-            <h1 style="text-transform: uppercase;">informasi covid-19 indonesia </h1>
+            <h1 class="animasi_teks">informasi covid-19 indonesia </h1>
             <p class="text-pict2">update penyebaran virus covid-19</p>
-            <button type="button" class="btn-pict">READ MORE</button>
+            <!-- <a href="#kesini" type="button" class="btn-pict">READ MORE</a> -->
+            <button onclick="location.href='#kesini';" type="button" class="btn-pict">READ MORE</button>
         </div>
     </div>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
@@ -133,7 +148,7 @@
       </nav> -->
 
     <!-- Header Content And Overall Numbers  -->
-     <div class="container mt-5">
+     <div class="container mt-5" id="kesini">
         <div class="row">
             <div class="col-12">
                 <h2 class="warna">Info Covid <b><span class="warna1"> Di Indonesia</span><span style="color: orange">.</span></b></h2>
