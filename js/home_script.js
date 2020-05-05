@@ -48,6 +48,18 @@ function drawPie(){
     chart.draw(data);
 }
 
+function pagination(){
+    $(document).ready( function () {
+        $('#tabel').DataTable({
+            'searching':false,
+            "lengthMenu": [[5,10,15, 20, -1], [5,10,15, 20, "All"]],
+            "scrollY":"200px",
+        });
+    } );
+}
+
+pagination();
+
 
     
     
