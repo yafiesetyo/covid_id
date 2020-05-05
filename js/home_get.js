@@ -23,11 +23,13 @@ function get_province(){
         dataType : 'JSON',
         success : function(data) {
             $.each(data,function(i,val){
-                $("#province").append(`<tr>
-                <td>`+data[i].Provinsi+`</td>
-                <td>`+data[i]['Kasus Meninggal']+`</td>
-                <td>`+data[i]['Kasus Sembuh']+`</td>
-                <td>`+data[i]['Kasus Positif']+`</td></tr>`);
+                $("#province").append(`
+                <tr>
+                    <td>`+data[i].Provinsi+`</td>
+                    <td>`+data[i]['Kasus Positif']+`</td>
+                    <td>`+data[i]['Kasus Sembuh']+`</td>
+                    <td>`+data[i]['Kasus Meninggal']+`</td>
+                </tr>`);
             });
             
         }
