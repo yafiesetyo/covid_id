@@ -56,5 +56,5 @@ function search_province() {
         }
 
 get_indo();
-get_province();
+// get_province();
 search_province();

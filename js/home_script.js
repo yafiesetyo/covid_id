@@ -49,13 +49,30 @@ function drawPie(){
 }
 
 function pagination(){
-    $(document).ready( function () {
-        $('#tabel').DataTable({
-            'searching':false,
-            "lengthMenu": [[5,10,15, 20, -1], [5,10,15, 20, "All"]],
-            "scrollY":"200px",
-        });
-    } );
+    // $(document).ready( function () {
+    //     $('#tabel').DataTable({
+    //         'ajax':{
+    //             "url":'https://eligiblestore.com/api/covid19id/',
+    //             "method":"GET"
+    //         },
+    //         'searching':false,
+    //         "lengthMenu": [[5,10,15, 20, -1], [5,10,15, 20, "All"]],
+    //         "scrollY":"200px",
+    //     });
+    // } );
+    $.ajax({
+        url : 'https://eligiblestore.com/api/covid19id/',
+        method : 'GET',
+        dataType : 'JSON',
+        success : function(data) {
+            $('#tabel').DataTable({
+                "aaData":data,
+                'searching':false,
+                "lengthMenu": [[5,10,15, 20, -1], [5,10,15, 20, "All"]],
+                "scrollY":"200px",
+            });
+        }
+    });
 }
 
 pagination();
