@@ -31,7 +31,10 @@ function get_province(){
                     <td>`+data[i]['Kasus Meninggal']+`</td>
                 </tr>`);
             });
-            
+            $('#tabel').DataTable({
+                'searching':true,
+                "lengthMenu": [[10,15, 20, -1], [10,15, 20, "All"]],
+            });
         }
     });
 }
@@ -40,6 +43,7 @@ function search_province() {
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("input");
             filter = input.value.toUpperCase();
+            console.log(filter)
             table = document.getElementById("tabel");
             tr = table.getElementsByTagName("tr");
             for (i = 0; i < tr.length; i++) {
@@ -53,6 +57,7 @@ function search_province() {
                     }
                 }
             }
+
         }
 
 get_indo();
