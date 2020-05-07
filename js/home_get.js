@@ -47,7 +47,7 @@ function get_province(){
                 </tr>`);
             });
             $('#tabel').DataTable({
-                'searching':false,
+                'searching':true,
                 "lengthMenu": [[10,15, 20, -1], [10,15, 20, "All"]],
             });
         }
@@ -77,4 +77,4 @@ function search_province() {
 
 get_indo();
 get_province();
-search_province();
+// search_province();
