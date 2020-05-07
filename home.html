@@ -104,9 +104,6 @@
     html {
         scroll-behavior: smooth;
     }
-    body{
-        background-color: #FCFFF0;
-    }
 </style>
 
 <body>
@@ -129,33 +126,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#contents">Info Covid</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" target="_blank">About</a>
+                    <a class="nav-link" href="#infografik">Grafik</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" target="_blank">Infographics</a>
+                    <a class="nav-link" href="#">Konten</a>
                 </li>
             </ul>
         </div>
         </div>
     </nav>
-
-    <!-- Navigation Bar -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">COV.ID</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#">Home</a>
-            <a class="nav-item nav-link" href="#">About</a>
-            <a class="nav-item nav-link" href="#">Incoming content...</a>
-          </div>
-        </div>
-      </nav> -->
 
     <!-- Header Content And Overall Numbers  -->
     <div class="container " id="contents" style="height: 110vh;">
@@ -176,81 +158,93 @@
         </div>
         <br>
         <div class="row ">
-            <div class="col-lg-3 mb-2 ">
-                <div class="card " style="width: 17rem;background : radial-gradient(#FFFAFA,#FF0000);">
+            <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center ">
+                <div class="card " style="width: 17rem;background : linear-gradient(to right,#D31027,#EA384D);color: white; border-style: none;">
                     <div class="card-body">
                         <h5 class="card-title">Total Terinfeksi</h5>
                         <img src="./assets/sedih.png" class="float-right" style="height: 3rem; margin-top: -30px;">
                         <strong>
-                            <h5 class="card-text" id="infects"> </h5>
+                            <h5 class="card-text" id="infects" style="font-size: 42px;"></h5>
+                            <p class="card-text ml-2"  style="font-weight: lighter;" >jiwa</p>
                         </strong>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mb-2">
-                <div class="card " style="width: 17rem;background: radial-gradient(#FFFAFA,#808069); ">
+            <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
+                <div class="card " style="width: 17rem;background: linear-gradient(to right,#8E2DE2,#4A00E0);color: white; border-style: none;">
                     <div class="card-body">
                         <h5 class="card-title">Meninggal</h5>
                         <img src="./assets/nangis_parah.png" class="float-right" style="height: 3rem; margin-top: -30px;">
                         <strong>
-                                <h5 class="card-text" id="death"></h5>
+                            <h5 class="card-text" id="death" style="font-size: 42px;"></h5>
+                            <p class="card-text ml-2"  style="font-weight: lighter;" >jiwa</p>
                         </strong>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mb-2 ">
-                <div class="card " style="width: 17rem;background: radial-gradient(#FFFAFA,#0AC92B);">
+            <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
+                <div class="card " style="width: 17rem;background: linear-gradient(to right,#1D976C,#93F9B9); color: white; border-style: none;">
                     <div class="card-body">
                         <h5 class="card-title">Sembuh</h5>
                         <img src="./assets/senang.png" class="float-right" style="height: 3rem; margin-top: -30px;">
                         <strong>
-                             <h5 class="card-text" id="recover"></h5>
+                            <h5 class="card-text" id="recover" style="font-size: 42px;"></h5>
+                            <p class="card-text ml-2"  style="font-weight: lighter;" >jiwa</p>
                         </strong>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 mb-2">
-                <div class="card" style="width: 17rem;background: radial-gradient(#FFFAFA,#1E90FF);">
+            <div class="col-lg-3 col-sm-12 d-flex justify-content-center">
+                <div class="card" style="width: 17rem;background: linear-gradient(to right,#00B4DB,#0083B0); color: white; border-style: none;">
                     <div class="card-body">
                         <h5 class="card-title">Total Kasus Perhari</h5>
                         <img src="./assets/bingung.png" class="float-right" style="height: 3rem; margin-top: -30px;">
                         <strong>
-                            <h5 class="card-text" id="now"></h5>
+                            <h5 class="card-text" id="now" style="font-size: 42px;"></h5>
+                            <p class="card-text ml-2"  style="font-weight: lighter;" >jiwa</p>
                         </strong>
                     </div>
                 </div>
             </div>
         </div>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
-        <br>
-
-<<<<<<< HEAD
-        <!-- Pie Chart -->
-        <div class="row">
-            <div class="col-12 d-flex justify-content-start ">
-                <div id="pie" style="width: 600px; height: 300px;"></div>
-=======
-        <!-- Teks konten narasi  -->
-        <div class="row">
-            <div class="col-6">
-                <h4 class="warna">Apa itu Corona Virus<b><span style="color: orange">.</span></b></h4>
-                <div class="card">
-                    Masukin disini
-                </div>
+        <!-- Statistics and charts -->
+        <div class="row" id="infografik">
+            <div class="col-12">
+                <h3 class="warna">Infografik<b><span style="color: orange">.</span></b></h3>
             </div>
-            <div class="col-6">
-                <h4 class="warna">Cara Mencegah Corona Virus<b><span style="color: orange">.</span></b></h4>
-                <div class="card">
-                    Masukin disini
-                </div>
->>>>>>> 24e5aa0477c6713f07c4578619baaab33c2d1f2b
-            </div>
-            
         </div>
-<<<<<<< HEAD
-=======
+        <div class="row">
+            <div class="col-12">
+                <p>Presentase penyebaran COVID-19 dan Perkembangan COVID-19 di <b>Indonesia.</b></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-toggle="tab" href="#pie_chart" role="tab" aria-controls="home" aria-selected="true">Persentase Persebaran</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Statistik Perkembangan</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="pie_chart" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-12 mt-1">
+                                <div class="card d-flex justify-content-center">
+                                    <div id="pie" style="width: 100%; height: 400px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                  </div>
+            </div>
+        </div>
 
->>>>>>> 24e5aa0477c6713f07c4578619baaab33c2d1f2b
         <!-- Tables  -->
         <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
         <h3 class="warna">Sebaran Kasus Provinsi<b><span style="color: orange">.</span></b></h3>
@@ -258,7 +252,6 @@
             <form>
                 <div class="form-row">
                     <div class="col">
-
                     </div>
                     <div class="input-group mb-3 input-group-sm" style="width: 35%;">
                         <strong>
@@ -293,19 +286,22 @@
         </div>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
         <br>
+
+        <!-- Teks konten narasi  -->
         <div class="row">
-            <div class="col-12 d-flex justify-content-center ">
-                <div id="pie" style="width: 900px; height: 500px;"></div>
+            <div class="col-6 mb-3">
+                <h4 class="warna">Apa itu Corona Virus<b><span style="color: orange">.</span></b></h4>
+                <div class="card">
+                    Masukin disini
+                </div>
             </div>
+            <div class="col-6">
+                <h4 class="warna">Cara Mencegah Corona Virus<b><span style="color: orange">.</span></b></h4>
+                <div class="card">
+                    Masukin disini
+                </div>
+            </div>            
         </div>
-       <!--  <div class="row">
-            
-        </div> -->
-
-        
-
-        
-
     </div>
 </body>
 </html>

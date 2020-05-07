@@ -5,15 +5,27 @@ function get_indo(){
         method : 'GET',
         dataType : 'JSON',
         success : function(data){
-            let a = ' jiwa';
             $("#date").append(data.Tanggal);
-            $("#infects").append(data.Jumlah_Kasus_Kumulatif+a);
-            $("#death").append(data.Jumlah_Pasien_Meninggal+a);
-            $("#recover").append(data.Jumlah_Pasien_Sembuh+a);
+            $("#infects").append(data.Jumlah_Kasus_Kumulatif);
+            $("#death").append(data.Jumlah_Pasien_Meninggal);
+            $("#recover").append(data.Jumlah_Pasien_Sembuh);
             // $("#perawatan").append(data.Jumlah_pasien_dalam_perawatan+a)
-            $("#now").append(data.Jumlah_Kasus_Baru_per_Hari+a)
+            $("#now").append(data.Jumlah_Kasus_Baru_per_Hari)
         }
     });
+}
+
+function addCommas(nStr)
+{
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
 }
 
 function get_province(){
@@ -23,16 +35,19 @@ function get_province(){
         dataType : 'JSON',
         success : function(data) {
             $.each(data,function(i,val){
+                var positive = parseInt(data[i]['Kasus Positif']);
+                var sembuh = parseInt(data[i]['Kasus Sembuh']);
+                var meninggal = parseInt(data[i]['Kasus Meninggal']);
                 $("#province").append(`
                 <tr>
                     <td>`+data[i].Provinsi+`</td>
-                    <td>`+data[i]['Kasus Positif']+`</td>
-                    <td>`+data[i]['Kasus Sembuh']+`</td>
-                    <td>`+data[i]['Kasus Meninggal']+`</td>
+                    <td>`+positive+`</td>
+                    <td>`+sembuh+`</td>
+                    <td>`+meninggal+`</td>
                 </tr>`);
             });
             $('#tabel').DataTable({
-                'searching':true,
+                'searching':false,
                 "lengthMenu": [[10,15, 20, -1], [10,15, 20, "All"]],
             });
         }
@@ -61,5 +76,5 @@ function search_province() {
         }
 
 get_indo();
-// get_province();
+get_province();
 search_province();

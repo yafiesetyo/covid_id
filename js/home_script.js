@@ -1,6 +1,7 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawPie);
-  
+google.charts.setOnLoadCallback(drawChart); 
+
 function drawPie(){
 
     // get JSON data
@@ -26,7 +27,7 @@ function drawPie(){
         return b[1]-a[1]
     });
 
-    for (index = 5; index < arr_prov.length; index++) {
+    for (index = 3; index < arr_prov.length; index++) {
         others += arr_prov[index][1];  
     }
     // console.log(others);
@@ -41,53 +42,24 @@ function drawPie(){
         [arr_prov[4][0],parseInt(arr_prov[4][1])],
         ['Lainnya',others]
     ]);
-        // var options ={
-        //     is3D:true
-        // }
-    var chart = new google.visualization.PieChart(document.getElementById('pie'));
-    chart.draw(data);
-}
+    var options ={
+        legendPositon:'bottom',
+        chartArea:{width:'50%',height:'75%'}
+    }
 
-<<<<<<< HEAD
-function pagination(){
-    // $(document).ready( function () {
-    //     $('#tabel').DataTable({
-    //         'ajax':{
-    //             "url":'https://eligiblestore.com/api/covid19id/',
-    //             "method":"GET"
-    //         },
-    //         'searching':false,
-    //         "lengthMenu": [[5,10,15, 20, -1], [5,10,15, 20, "All"]],
-    //         "scrollY":"200px",
-    //     });
-    // } );
-    $.ajax({
-        url : 'https://eligiblestore.com/api/covid19id/',
-        method : 'GET',
-        dataType : 'JSON',
-        success : function(data) {
-            $('#tabel').DataTable({
-                "aaData":data,
-                'searching':false,
-                "lengthMenu": [[5,10,15, 20, -1], [5,10,15, 20, "All"]],
-                "scrollY":"200px",
-            });
-        }
+    
+    var chart = new google.visualization.PieChart(document.getElementById('pie'));
+    chart.draw(data,options);
+    $(window).resize(function() {
+        drawPie();
     });
 }
-=======
-// function pagination(){
-//     $(document).ready( function () {
-//         $('#tabel').DataTable({
-//             'searching':false,
-//             "lengthMenu": [[5,10,15, 20, -1], [5,10,15, 20, "All"]],
-//             // "scrollY":"200px",
-//         });
-//     } );
-// }
->>>>>>> 24e5aa0477c6713f07c4578619baaab33c2d1f2b
 
-// pagination();
+function drawChart(){
+    var jsonData = $.ajax({
+        
+    });
+}
 
 
     
