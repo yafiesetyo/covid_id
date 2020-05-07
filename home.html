@@ -53,7 +53,7 @@
     }
     
     .text-pict2 {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .btn-pict {
@@ -95,13 +95,17 @@
         text-transform: uppercase;
         white-space:nowrap;
         overflow:hidden;
-        animation: tulis 7s steps(50, end);
+        animation: tulis 7s steps(50, end) infinite;
+        
     }
     @keyframes tulis{
             from { width: 0; }
     }
     html {
         scroll-behavior: smooth;
+    }
+    body{
+        background-color: #FCFFF0;
     }
 </style>
 
@@ -164,7 +168,7 @@
             <div class="col-12">
                 <table>
                     <thead>
-                        <td>Tanggal :</td>
+                        <td>Update Tanggal :</td>
                         <th id="date"></th>
                     </thead>
                 </table>
@@ -173,50 +177,80 @@
         <br>
         <div class="row ">
             <div class="col-lg-3 mb-2 ">
-                <div class="card " style="width: 17rem;background-color: #66CDAA">
+                <div class="card " style="width: 17rem;background : radial-gradient(#FFFAFA,#FF0000);">
                     <div class="card-body">
                         <h5 class="card-title">Total Terinfeksi</h5>
-                        <img src="./assets/square.png" class="float-right" style="height: 3rem; margin-top: -30px;">
-                        <p class="card-text" id="infects"> </p>
+                        <img src="./assets/sedih.png" class="float-right" style="height: 3rem; margin-top: -30px;">
+                        <strong>
+                            <h5 class="card-text" id="infects"> </h5>
+                        </strong>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 mb-2">
-                <div class="card " style="width: 17rem;background-color: #FA8072">
+                <div class="card " style="width: 17rem;background: radial-gradient(#FFFAFA,#808069); ">
                     <div class="card-body">
                         <h5 class="card-title">Meninggal</h5>
-                        <img src="./assets/square.png" class="float-right" style="height: 3rem; margin-top: -30px;">
-                        <p class="card-text" id="death"></p>
+                        <img src="./assets/nangis_parah.png" class="float-right" style="height: 3rem; margin-top: -30px;">
+                        <strong>
+                                <h5 class="card-text" id="death"></h5>
+                        </strong>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 mb-2 ">
-                <div class="card " style="width: 17rem;background-color: #FFD700">
+                <div class="card " style="width: 17rem;background: radial-gradient(#FFFAFA,#0AC92B);">
                     <div class="card-body">
                         <h5 class="card-title">Sembuh</h5>
-                        <img src="./assets/square.png" class="float-right" style="height: 3rem; margin-top: -30px;">
-                        <p class="card-text" id="recover"></p>
+                        <img src="./assets/senang.png" class="float-right" style="height: 3rem; margin-top: -30px;">
+                        <strong>
+                             <h5 class="card-text" id="recover"></h5>
+                        </strong>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 mb-2">
-                <div class="card" style="width: 17rem;background-color: #E3CF57">
+                <div class="card" style="width: 17rem;background: radial-gradient(#FFFAFA,#1E90FF);">
                     <div class="card-body">
                         <h5 class="card-title">Total Kasus Perhari</h5>
-                        <img src="./assets/square.png" class="float-right" style="height: 3rem; margin-top: -30px;">
-                        <p class="card-text" id="now"></p>
+                        <img src="./assets/bingung.png" class="float-right" style="height: 3rem; margin-top: -30px;">
+                        <strong>
+                            <h5 class="card-text" id="now"></h5>
+                        </strong>
                     </div>
                 </div>
             </div>
         </div>
         <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
+        <br>
 
+<<<<<<< HEAD
         <!-- Pie Chart -->
         <div class="row">
             <div class="col-12 d-flex justify-content-start ">
                 <div id="pie" style="width: 600px; height: 300px;"></div>
+=======
+        <!-- Teks konten narasi  -->
+        <div class="row">
+            <div class="col-6">
+                <h4 class="warna">Apa itu Corona Virus<b><span style="color: orange">.</span></b></h4>
+                <div class="card">
+                    Masukin disini
+                </div>
             </div>
+            <div class="col-6">
+                <h4 class="warna">Cara Mencegah Corona Virus<b><span style="color: orange">.</span></b></h4>
+                <div class="card">
+                    Masukin disini
+                </div>
+>>>>>>> 24e5aa0477c6713f07c4578619baaab33c2d1f2b
+            </div>
+            
         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 24e5aa0477c6713f07c4578619baaab33c2d1f2b
         <!-- Tables  -->
         <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
         <h3 class="warna">Sebaran Kasus Provinsi<b><span style="color: orange">.</span></b></h3>
@@ -240,7 +274,7 @@
             <div class="card mb-5" style="width: 67rem; margin-left: 2.5rem;">
                 <div class="card-body">
                     <div class="col-12">
-                        <table class="table table-fixed" id="tabel">
+                        <table class="table table-fixed" id='tabel'>
                             <thead class="thead-dark sticky-top">
                                 <tr>
                                     <th scope="col">Provinsi</th>
@@ -257,6 +291,16 @@
                 </div>
             </div>
         </div>
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
+        <br>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center ">
+                <div id="pie" style="width: 900px; height: 500px;"></div>
+            </div>
+        </div>
+       <!--  <div class="row">
+            
+        </div> -->
 
         
 

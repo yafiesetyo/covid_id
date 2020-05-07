@@ -29,7 +29,7 @@ function drawPie(){
     for (index = 5; index < arr_prov.length; index++) {
         others += arr_prov[index][1];  
     }
-    console.log(others);
+    // console.log(others);
     // end section
 
     var data = google.visualization.arrayToDataTable([
@@ -48,6 +48,7 @@ function drawPie(){
     chart.draw(data);
 }
 
+<<<<<<< HEAD
 function pagination(){
     // $(document).ready( function () {
     //     $('#tabel').DataTable({
@@ -74,8 +75,19 @@ function pagination(){
         }
     });
 }
+=======
+// function pagination(){
+//     $(document).ready( function () {
+//         $('#tabel').DataTable({
+//             'searching':false,
+//             "lengthMenu": [[5,10,15, 20, -1], [5,10,15, 20, "All"]],
+//             // "scrollY":"200px",
+//         });
+//     } );
+// }
+>>>>>>> 24e5aa0477c6713f07c4578619baaab33c2d1f2b
 
-pagination();
+// pagination();
 
 
     
