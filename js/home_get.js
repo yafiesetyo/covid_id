@@ -49,10 +49,10 @@ function get_province(){
             $('#tabel').DataTable({
                 'searching':true,
                 "lengthMenu": [[10,15, 20, -1], [10,15, 20, "All"]],
-                responsive: true,
                 rowReorder: {
                     selector: 'td:nth-child(2)'
                 },
+                responsive: true
             });
         }
     });

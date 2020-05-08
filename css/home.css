@@ -12,6 +12,7 @@ html {
         object-fit: cover;
         object-position: center;
     }
+
 }
 
 .navbar {
@@ -70,12 +71,13 @@ html {
 .animasi_teks {
     font-size: 33px;
     color: white;
-    width: 740px;
+    /* width: 740px; */
+    width: 100%;
     font-weight: bold;
     text-transform: uppercase;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: tulis 7s steps(50, end) infinite;
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* animation: tulis 7s steps(50, end) infinite; */
 }
 @keyframes tulis {
     from {
@@ -92,4 +94,11 @@ html {
 .aktif, .pil:hover {
     background-color: grey;
     color: white;
+}
+
+.pil{
+    border-style: none;
+    width: 30px;
+    height: 30px;
+
 }

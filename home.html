@@ -15,6 +15,7 @@
         <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/rowreorder/1.2.6/js/dataTables.rowReorder.min.js"></script>
         <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
         <script type="text/javascript" src="js/home_script.js"></script>
         <script src="js/home_get.js"></script>
         <link rel="icon" href="./assets/covid1.jpg" />
@@ -172,30 +173,34 @@
                 Sebaran Kasus Provinsi<b><span style="color: orange;">.</span></b>
             </h3>
             <div class="row">
-                <div class="card mb-5" style="width: 67rem; margin-left: 2.5rem;">
-                    <div class="card-body">
-                        <div class="col-12">
-                            <table class="table display nowrap" id="tabel" style="width: 100%;">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">Provinsi</th>
-                                        <th scope="col">Jumlah Terinfeksi</th>
-                                        <th scope="col">Sembuh</th>
-                                        <th scope="col">Meninggal</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="province"></tbody>
-                            </table>
+                <div class="col-12">
+                    <div class="card mb-5">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table display nowrap" id="tabel" style="width: 100%;">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">Provinsi</th>
+                                                <th scope="col">Jumlah Terinfeksi</th>
+                                                <th scope="col">Sembuh</th>
+                                                <th scope="col">Meninggal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="province"></tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
             <hr style="height: 2px; border-width: 0; color: gray; background-color: gray; opacity: 0.5;" />
             <br />
 
             <!-- Teks konten narasi  -->
             <div class="row" id="konten">
-                <div class="col-6 mb-3">
+                <div class="col-lg-6 col-sm-12 mb-3">
                     <h4 class="warna">
                         Apa itu Corona Virus<b><span style="color: orange;">.</span></b>
                     </h4>
@@ -203,7 +208,7 @@
                         Masukin disini
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-lg-6 col-sm-12">
                     <h4 class="warna">
                         Cara Mencegah Corona Virus<b><span style="color: orange;">.</span></b>
                     </h4>
