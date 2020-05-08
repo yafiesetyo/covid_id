@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
         <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.6/css/rowReorder.dataTables.min.css" />
         <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -75,7 +76,7 @@
             <br />
             <div class="row">
                 <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
-                    <div class="card" style="width: 17rem; background: linear-gradient(to right, #d31027, #ea384d); color: white; border-style: none;">
+                    <div class="card" style="width: 100%; background: linear-gradient(to right, #d31027, #ea384d); color: white; border-style: none;">
                         <div class="card-body">
                             <h5 class="card-title">Total Terinfeksi</h5>
                             <img src="./assets/sedih.png" class="float-right" style="height: 3rem; margin-top: -30px;" />
@@ -87,7 +88,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
-                    <div class="card" style="width: 17rem; background: linear-gradient(to right, #8e2de2, #4a00e0); color: white; border-style: none;">
+                    <div class="card" style="width: 100%; background: linear-gradient(to right, #8e2de2, #4a00e0); color: white; border-style: none;">
                         <div class="card-body">
                             <h5 class="card-title">Meninggal</h5>
                             <img src="./assets/nangis_parah.png" class="float-right" style="height: 3rem; margin-top: -30px;" />
@@ -99,7 +100,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
-                    <div class="card" style="width: 17rem; background: linear-gradient(to right, #1d976c, #93f9b9); color: white; border-style: none;">
+                    <div class="card" style="width: 100%; background: linear-gradient(to right, #1d976c, #93f9b9); color: white; border-style: none;">
                         <div class="card-body">
                             <h5 class="card-title">Sembuh</h5>
                             <img src="./assets/senang.png" class="float-right" style="height: 3rem; margin-top: -30px;" />
@@ -111,7 +112,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
-                    <div class="card" style="width: 17rem; background: linear-gradient(to right, #00b4db, #0083b0); color: white; border-style: none;">
+                    <div class="card" style="width: 100%; background: linear-gradient(to right, #00b4db, #0083b0); color: white; border-style: none;">
                         <div class="card-body">
                             <h5 class="card-title">Total Kasus Perhari</h5>
                             <img src="./assets/bingung.png" class="float-right" style="height: 3rem; margin-top: -30px;" />
@@ -124,8 +125,9 @@
                 </div>
             </div>
             <div id="infografik">
-                <hr style="height: 2px; border-width: 0; opacity: 0; margin-bottom: 100px; color: gray; background-color: gray; opacity: 0.5;" />
+                <hr style="height: 2px; border-width: 0; opacity: 0; margin-bottom: 75px; color: gray; background-color: gray; opacity: 0.5; margin-top: 75px;" />
             </div>
+
             <!-- Statistics and charts -->
             <div>
                 <div class="row">
@@ -331,28 +333,56 @@
         <br />
         <br />
         <br />
-        <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="page-footer pt-4" style="background: linear-gradient(to right,#0f0c29,#302b63,#24243e);">
             <div class="container">
-                <div class="col-sm-6 mb-4">
-                    <h6 style="color: white;">Ini Footer</h6>
-                    <div class="row">
-                        <div class="col-12"></div>
-                    </div>
-                </div>
-                <div class="col-sm-6 mb-4">
-                    <h6 style="color: white;">Develoved By.</h6>
-                    <div class="row">
-                        <div class="col-12">
-                            <span>
-                                <a href="https://www.instagram.com/yafiesetyo/?hl=id">@Yafie Setyo</a>
-                                <a href="https://www.instagram.com/brahmasuryaa/?hl=id">@Brahma Surya</a>
-                                <a href="https://www.instagram.com/satriaamien/?hl=id">@Satria Amien</a>
-                            </span>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8 col-sm-12 mb-4 mt-4" >
+                        <h6 style="color: white; font-weight: bold;">Punya Masukan dan Kritik ?</h6>
+                        <p style="color: white;font-size: 12px;">Kami butuh feedback agar kami dapat 
+                            menjadi lebih baik dalam melayani anda.</p>
+                        <div class="row">
+                            <div class="col-12">
+                                <a class="btn btn-success" href="#" role="button">Isi Feedback Disini !</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-4 col-sm-12 mb-4 mt-4" >
+                        <h6 style="color: white;">Credits</h6>
+                        <div class="row">
+                            <div class="col-12">
+                                <span>
+                                    <a href="https://www.kompas.com/">kompas.com</a>
+                                    <br>
+                                    <a href="https://www.kemkes.go.id/">Kemenkes Republik Indonesia</a>
+                                    <br>
+                                    <a href="https://eligiblestore.com/blog">eligiblestore.com</a>
+                                    <br>
+                                    <a href="kawalcorona.com">kawalcorona.com</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                  
             </div>
-        </nav>
+        </div>
+        <div style="background: linear-gradient(to right,#606c88,#3f4c6b);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 mt-4 d-flex justify-content-center">
+                        <h6 style="color: white;">@2020. Developed <span class="fa fa-heart"></span> By</h6>
+                    </div>
+                </div>                        
+                <div class="row pb-3">
+                    <div class="col-12 d-flex justify-content-center" style="color: #ffff;">
+                        <span>
+                            <a href="https://www.instagram.com/yafiesetyo/?hl=id">Yafie Setyo</a>,
+                            <a href="https://www.instagram.com/brahmasuryaa/?hl=id">Brahma Surya</a>,
+                            <a href="https://www.instagram.com/satriaamien/?hl=id">Satria Amien</a> 
+                        </span>
+                    </div>
+                </div>      
+            </div>
+        </div>
     </body>
     <script type="text/javascript">
         var header = document.getElementById("klik");
