@@ -1,6 +1,7 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawPie);
-google.charts.setOnLoadCallback(drawChart); 
+google.charts.setOnLoadCallback(drawChart);
+
 
 function drawPie(){
 
@@ -43,23 +44,57 @@ function drawPie(){
         ['Lainnya',others]
     ]);
     var options ={
-        legendPositon:'bottom',
-        chartArea:{width:'50%',height:'75%'}
+        legendPositon:'top',
+        chartArea:{width:'90%',height:'70%'}
     }
 
     
     var chart = new google.visualization.PieChart(document.getElementById('pie'));
     chart.draw(data,options);
-    $(window).resize(function() {
-        drawPie();
-    });
 }
 
 function drawChart(){
     var jsonData = $.ajax({
-        
+        url : 'https://eligiblestore.com/api/covid19id/',
+        method : 'GET',
+        dataType : 'JSON',
+        async : false
     });
+    jsonData = jsonData.responseJSON;
+
+    var arr_prov = []
+    for ( i = 0; i < jsonData.length; i++) {
+        arr_prov.push([jsonData[i].Provinsi,jsonData[i]['Kasus Sembuh']]); 
+    }
+    arr_prov.sort(function(a,b){
+        return b[1]-a[1]
+    });
+    var data = google.visualization.arrayToDataTable([
+        ['Provinsi','Jumlah Sembuh'],
+        [arr_prov[0][0],parseInt(arr_prov[0][1])],
+        [arr_prov[1][0],parseInt(arr_prov[1][1])],
+        [arr_prov[2][0],parseInt(arr_prov[2][1])],
+        [arr_prov[3][0],parseInt(arr_prov[3][1])],
+        [arr_prov[4][0],parseInt(arr_prov[4][1])],
+    ]);
+    var options ={
+        legendPositon:'top',
+        chartArea:{width:'50%',height:'70%'}
+    }
+    var chart = new google.visualization.BarChart(document.getElementById("bar_chart"));
+    chart.draw(data, options);
+
+
 }
+
+// $(".nav-item a").click(function(){
+//     $(this).addClass("active");
+// });
+
+$(window).resize(function() {
+    drawPie();
+    drawChart();
+});
 
 function pindah1(){
     document.getElementById("satu").style.display= "block";
@@ -70,6 +105,10 @@ function pindah2(){
     document.getElementById("dua").style.display= "block";
       
 }
+
+
+
+
 
 
     
