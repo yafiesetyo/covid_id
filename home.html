@@ -1,311 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.6/css/rowReorder.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/rowreorder/1.2.6/js/dataTables.rowReorder.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="js/home_script.js"></script>
-    <script src="js/home_get.js"></script>
-    <link rel="icon" href="./assets/covid1.jpg">
-</head>
-<style type="text/css">
-    body,
-    html {
-        height: 100%
-    }
-    
-    .navbar {
-        background-color: rgba(0, 0, 0, .60)
-    }
-    
-    @media only screen and (max-width:768px) {
-        .pict{
-            object-fit: cover;
-            object-position: center;
-        }
-    }
-    
-    .navbar {
-        padding: 15px;
-        background-color: rgb(23, 29, 41)
-    }
-    
-    .landing-pict {
-        position: relative;
-        color: white;
-        height: 110vh;
-    }
-    
-    .text-pict {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-    }
-    
-    .text-pict2 {
-        font-size: 16px;
-    }
-    
-    .btn-pict {
-        border: none;
-        cursor: pointer;
-        padding: 7px 12px;
-        background-color: #F5F5F5;
-        color: black;
-        font-size: 12px;
-        border-radius: 5px;
-        font-size: 16px;
-        text-transform: uppercase;
-        display: inline-block;
-        transition-duration: 0.4s;
-        transition: 0.4;
-    }
-    
-    .btn-pict:hover {
-        background-color: white;
-        color: black;
-        transition: 0.4;
-        /*border: 2px solid #f44336;*/
-        background-color: #53F44F;
-    }
-    .warna {
-        color: black solid;
-        font-weight: bold;
-    }
-    
-    .warna1 {
-        color: grey;
-    }
-    .animasi_teks
-    {
-        font-size: 33px;
-        color: white;
-        width: 740px;
-        font-weight: bold;
-        text-transform: uppercase;
-        white-space:nowrap;
-        overflow:hidden;
-        animation: tulis 7s steps(50, end) infinite;
-        
-    }
-    @keyframes tulis{
-            from { width: 0; }
-    }
-    html {
-        scroll-behavior: smooth;
-    }
-</style>
-
-<body>
-    <div class="landing-pict">
-        <img src="./assets/covid1.jpg" class="pict" alt="virus-covid-19" style="width: 100%; height: 700px;">
-        <div class="text-pict">
-            <h1 class="animasi_teks">informasi covid-19 indonesia</h1>
-            <p class="text-pict2">update penyebaran virus covid-19</p>
-            <!-- <a href="#kesini" type="button" class="btn-pict">READ MORE</a> -->
-            <button onclick="location.href='#contents';" type="button" class="btn-pict">READ MORE</button>
-        </div>
-    </div>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-        <a class="navbar-brand" href="#" target="_blank">
-            <strong>COV.ID</strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="#contents">Info Covid</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#infografik">Grafik</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Konten</a>
-                </li>
-            </ul>
-        </div>
-        </div>
-    </nav>
-
-    <!-- Header Content And Overall Numbers  -->
-    <div class="container " id="contents" style="height: 110vh;">
-        <div class="row ">
-            <div class="col-12 mt-5">
-                <h2 class="warna mt-5">Info Covid <b><span class="warna1"> Di Indonesia</span><span style="color: orange">.</span></b></h2>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.6/css/rowReorder.dataTables.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/rowreorder/1.2.6/js/dataTables.rowReorder.min.js"></script>
+        <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="js/home_script.js"></script>
+        <script src="js/home_get.js"></script>
+        <link rel="icon" href="./assets/covid1.jpg" />
+        <link rel="stylesheet" href="css/home.css" type="text/css">
+    </head>
+    <body>
+        <div class="landing-pict">
+            <img src="./assets/covid1.jpg" class="pict" alt="virus-covid-19" style="width: 100%; height: 700px;" />
+            <div class="text-pict">
+                <h1 class="animasi_teks">informasi covid-19 indonesia</h1>
+                <p class="text-pict2">update penyebaran virus covid-19</p>
+                <!-- <a href="#kesini" type="button" class="btn-pict">READ MORE</a> -->
+                <button onclick="location.href='#info_covid';" type="button" class="btn-pict">READ MORE</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <table>
-                    <thead>
-                        <td>Update Tanggal :</td>
-                        <th id="date"></th>
-                    </thead>
-                </table>
-            </div>
-        </div>
-        <br>
-        <div class="row ">
-            <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center ">
-                <div class="card " style="width: 17rem;background : linear-gradient(to right,#D31027,#EA384D);color: white; border-style: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Terinfeksi</h5>
-                        <img src="./assets/sedih.png" class="float-right" style="height: 3rem; margin-top: -30px;">
-                        <strong>
-                            <h5 class="card-text" id="infects" style="font-size: 42px;"></h5>
-                            <p class="card-text ml-2"  style="font-weight: lighter;" >jiwa</p>
-                        </strong>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
-                <div class="card " style="width: 17rem;background: linear-gradient(to right,#8E2DE2,#4A00E0);color: white; border-style: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Meninggal</h5>
-                        <img src="./assets/nangis_parah.png" class="float-right" style="height: 3rem; margin-top: -30px;">
-                        <strong>
-                            <h5 class="card-text" id="death" style="font-size: 42px;"></h5>
-                            <p class="card-text ml-2"  style="font-weight: lighter;" >jiwa</p>
-                        </strong>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
-                <div class="card " style="width: 17rem;background: linear-gradient(to right,#1D976C,#93F9B9); color: white; border-style: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Sembuh</h5>
-                        <img src="./assets/senang.png" class="float-right" style="height: 3rem; margin-top: -30px;">
-                        <strong>
-                            <h5 class="card-text" id="recover" style="font-size: 42px;"></h5>
-                            <p class="card-text ml-2"  style="font-weight: lighter;" >jiwa</p>
-                        </strong>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
-                <div class="card" style="width: 17rem;background: linear-gradient(to right,#00B4DB,#0083B0); color: white; border-style: none;">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Kasus Perhari</h5>
-                        <img src="./assets/bingung.png" class="float-right" style="height: 3rem; margin-top: -30px;">
-                        <strong>
-                            <h5 class="card-text" id="now" style="font-size: 42px;"></h5>
-                            <p class="card-text ml-2"  style="font-weight: lighter;" >jiwa</p>
-                        </strong>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
-        <!-- Statistics and charts -->
-        <div class="row" id="infografik">
-            <div class="col-12">
-                <h3 class="warna">Infografik<b><span style="color: orange">.</span></b></h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <p>Presentase penyebaran COVID-19 dan Perkembangan COVID-19 di <b>Indonesia.</b></p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <a class="navbar-brand" href="#" target="_blank">
+                <strong>COV.ID</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#pie_chart" role="tab" aria-controls="home" aria-selected="true">Persentase Persebaran</a>
+                        <a class="nav-link" href="#info_covid">Info Covid</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Statistik Perkembangan</a>
+                        <a class="nav-link" href="#infografik">Grafik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#konten">Konten</a>
                     </li>
                 </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="pie_chart" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                            <div class="col-12 mt-1">
-                                <div class="card d-flex justify-content-center">
-                                    <div id="pie" style="width: 100%; height: 400px;"></div>
-                                </div>
-                            </div>
+            </div>
+        </nav>
+
+        <!-- Header Content And Overall Numbers  -->
+        <div class="container" id="info_covid" style="height: 110vh;">
+            <div class="row">
+                <div class="col-12 mt-5">
+                    <h2 class="warna mt-5">
+                        Info Covid <b><span class="warna1"> Di Indonesia</span><span style="color: orange;">.</span></b>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table>
+                        <thead>
+                            <td>Update Tanggal :</td>
+                            <th id="date"></th>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
+                    <div class="card" style="width: 17rem; background: linear-gradient(to right, #d31027, #ea384d); color: white; border-style: none;">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Terinfeksi</h5>
+                            <img src="./assets/sedih.png" class="float-right" style="height: 3rem; margin-top: -30px;" />
+                            <strong>
+                                <h5 class="card-text" id="infects" style="font-size: 42px;"></h5>
+                                <p class="card-text ml-2" style="font-weight: lighter;">jiwa</p>
+                            </strong>
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                  </div>
-            </div>
-        </div>
-
-        <!-- Tables  -->
-        <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
-        <h3 class="warna">Sebaran Kasus Provinsi<b><span style="color: orange">.</span></b></h3>
-        <div>
-            <form>
-                <div class="form-row">
-                    <div class="col">
-                    </div>
-                    <div class="input-group mb-3 input-group-sm" style="width: 35%;">
-                        <strong>
-                            <p style="padding-right: 15px; color: grey;">Search by nama</p>
-                        </strong>
-                        <input type="text" class="form-control" id="input" onkeyup="search_province()" placeholder="Cari Provinsi berdasarkan nama" style="margin-right: 1.2rem;">
+                </div>
+                <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
+                    <div class="card" style="width: 17rem; background: linear-gradient(to right, #8e2de2, #4a00e0); color: white; border-style: none;">
+                        <div class="card-body">
+                            <h5 class="card-title">Meninggal</h5>
+                            <img src="./assets/nangis_parah.png" class="float-right" style="height: 3rem; margin-top: -30px;" />
+                            <strong>
+                                <h5 class="card-text" id="death" style="font-size: 42px;"></h5>
+                                <p class="card-text ml-2" style="font-weight: lighter;">jiwa</p>
+                            </strong>
+                        </div>
                     </div>
                 </div>
-            </form>
-
-        </div>
-        <div class="row">
-            <div class="card mb-5" style="width: 67rem; margin-left: 2.5rem;">
-                <div class="card-body">
+                <div class="col-lg-3 col-sm-12 mb-2 d-flex justify-content-center">
+                    <div class="card" style="width: 17rem; background: linear-gradient(to right, #1d976c, #93f9b9); color: white; border-style: none;">
+                        <div class="card-body">
+                            <h5 class="card-title">Sembuh</h5>
+                            <img src="./assets/senang.png" class="float-right" style="height: 3rem; margin-top: -30px;" />
+                            <strong>
+                                <h5 class="card-text" id="recover" style="font-size: 42px;"></h5>
+                                <p class="card-text ml-2" style="font-weight: lighter;">jiwa</p>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12 d-flex justify-content-center">
+                    <div class="card" style="width: 17rem; background: linear-gradient(to right, #00b4db, #0083b0); color: white; border-style: none;">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Kasus Perhari</h5>
+                            <img src="./assets/bingung.png" class="float-right" style="height: 3rem; margin-top: -30px;" />
+                            <strong>
+                                <h5 class="card-text" id="now" style="font-size: 42px;"></h5>
+                                <p class="card-text ml-2" style="font-weight: lighter;">jiwa</p>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 2px; border-width: 0; color: gray; background-color: gray; opacity: 0.5;" />
+            <!-- Statistics and charts -->
+            <div class="container" id="infografik">
+                <div class="row">
                     <div class="col-12">
-                        <table class="table display nowrap" id='tabel' style="width:100%">
-                            <thead class="thead-dark sticky-top">
-                                <tr>
-                                    <th scope="col">Provinsi</th>
-                                    <th scope="col">Jumlah Terinfeksi</th>
-                                    <th scope="col">Sembuh</th>
-                                    <th scope="col">Meninggal</th>
-                                </tr>
-                            </thead>
-                            <tbody id="province">
+                        <h3 class="warna">
+                            Infografik<b><span style="color: orange;">.</span></b>
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p>Presentase penyebaran COVID-19 dan Perkembangan COVID-19 di <b>Indonesia.</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#pie_chart" role="tab" aria-controls="home" aria-selected="true">Persentase Persebaran</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Statistik Perkembangan</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="pie_chart" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="row">
+                                    <div class="col-12 mt-1">
+                                        <div class="card d-flex justify-content-center">
+                                            <div id="pie" style="width: 100%; height: 400px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            
+            
+            <!-- Tables  -->
+            <hr style="height: 2px; border-width: 0; color: gray; background-color: gray; opacity: 0.5;" />
+            <br>
+            <h3 class="warna">
+                Sebaran Kasus Provinsi<b><span style="color: orange;">.</span></b>
+            </h3>
+            <div class="row">
+                <div class="card mb-5" style="width: 67rem; margin-left: 2.5rem;">
+                    <div class="card-body">
+                        <div class="col-12">
+                            <table class="table display nowrap" id="tabel" style="width: 100%;">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Provinsi</th>
+                                        <th scope="col">Jumlah Terinfeksi</th>
+                                        <th scope="col">Sembuh</th>
+                                        <th scope="col">Meninggal</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="province"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 2px; border-width: 0; color: gray; background-color: gray; opacity: 0.5;" />
+            <br />
 
-                            </tbody>
-                        </table>
+            <!-- Teks konten narasi  -->
+            <div class="row" id="konten">
+                <div class="col-6 mb-3">
+                    <h4 class="warna">
+                        Apa itu Corona Virus<b><span style="color: orange;">.</span></b>
+                    </h4>
+                    <div class="card">
+                        Masukin disini
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h4 class="warna">
+                        Cara Mencegah Corona Virus<b><span style="color: orange;">.</span></b>
+                    </h4>
+                    <div class="card">
+                        <p style="padding-left: 3%; padding-top: 2%;">Beberapa cara yang bisa dilakukan untuk mencegah penularan virus ini adalah:</p>
+                        <div id="satu">
+                            <ul style="padding-right: 3%;">
+                                <li>
+                                    Menjaga kesehatan dan kebugaran agar stamina tubuh tetap prima dan sistem imunitas / kekebalan tubuh meningkat.
+                                </li>
+                                <li>
+                                    Mencuci tangan dengan benar secara teratur menggunakan air dan sabun atau hand-rub berbasis alkohol.
+                                </li>
+                                <li>
+                                    Mencuci tangan sampai bersih selain dapat membunuh virus yang mungkin ada di tangan kita, tindakan ini juga merupakan salah satu tindakan yang mudah dan murah. Sekitar 98% penyebaran penyakit bersumber
+                                    dari tangan. Karena itu, menjaga kebersihan tangan adalah hal yang sangat penting.
+                                </li>
+                                <li>
+                                    Ketika batuk dan bersin, tutup hidung dan mulut Anda dengan tisu atau lengan atas bagian dalam (bukan dengan telapak tangan).
+                                </li>
+                                <li>
+                                    Hindari kontak dengan orang lain atau bepergian ke tempat umum.
+                                </li>
+                                <li>
+                                    Gunakan masker dengan benar hingga menutupi mulut dan hidung ketika Anda sakit atau saat berada di tempat umum.
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="dua">
+                            <ul style="padding-right: 3%;">
+                                <li>
+                                    Buang tisu dan masker yang sudah digunakan ke tempat sampah dengan benar, lalu cucilah tangan Anda.
+                                </li>
+                                <li>
+                                    Menunda perjalanan ke daerah/ negara dimana virus ini ditemukan.
+                                </li>
+                                <li>
+                                    Hindari bepergian ke luar rumah saat Anda merasa kurang sehat, terutama jika Anda merasa demam, batuk, dan sulit bernapas. Segera hubungi petugas kesehatan terdekat, dan mintalah bantuan mereka.
+                                </li>
+                                <li>
+                                    Sampaikan pada petugas jika dalam 14 hari sebelumnya Anda pernah melakukan perjalanan terutama ke negara terjangkit, atau pernah kontak erat dengan orang yang memiliki gejala yang sama. Ikuti arahan dari
+                                    petugas kesehatan setempat.
+                                </li>
+                                <li>
+                                    Selalu pantau perkembangan penyakit COVID-19 dari sumber resmi dan akurat. Ikuti arahan dan informasi dari petugas kesehatan dan Dinas Kesehatan setempat. Informasi dari sumber yang tepat dapat membantu
+                                    Anda melindungi dari Anda dari penularan dan penyebaran penyakit ini.
+                                </li>
+                            </ul>
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <div id="klik">
+                                <ul class="pagination justify-content-center">
+                                    <li>
+                                        <button class="pil aktif" onclick="pindah1()">1</button>
+                                    </li>
+                                    <li>
+                                        <button class="pil" onclick="pindah2()">2</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
-        <hr style="height:2px;border-width:0;color:gray;background-color:gray;opacity: 0.5;">
-        <br>
-
-        <!-- Teks konten narasi  -->
-        <div class="row">
-            <div class="col-6 mb-3">
-                <h4 class="warna">Apa itu Corona Virus<b><span style="color: orange">.</span></b></h4>
-                <div class="card">
-                    Masukin disini
-                </div>
-            </div>
-            <div class="col-6">
-                <h4 class="warna">Cara Mencegah Corona Virus<b><span style="color: orange">.</span></b></h4>
-                <div class="card">
-                    Masukin disini
-                </div>
-            </div>            
-        </div>
-    </div>
-</body>
+    </body>
+    <script type="text/javascript">
+        var header = document.getElementById("klik");
+        var pil = header.getElementsByClassName("pil");
+        for (var i = 0; i < pil.length; i++) {
+            pil[i].addEventListener("click", function() {
+            var tampung = document.getElementsByClassName("aktif");
+            if (tampung.length > 0) {
+                tampung[0].className = tampung[0].className.replace(" aktif", " ");
+            }
+            this.className += " aktif";
+        });
+    }
+    </script>
 </html>

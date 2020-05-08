@@ -61,6 +61,16 @@ function drawChart(){
     });
 }
 
+function pindah1(){
+    document.getElementById("satu").style.display= "block";
+    document.getElementById("dua").style.display="none";
+}
+function pindah2(){
+    document.getElementById("satu").style.display= "none";
+    document.getElementById("dua").style.display= "block";
+      
+}
+
 
     
     
