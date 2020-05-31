@@ -1,7 +1,7 @@
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawPie);
 google.charts.setOnLoadCallback(drawChart);
-
+google.charts.setOnLoadCallback(peta_covid);
 
 function drawPie(){
 
@@ -87,15 +87,6 @@ function drawChart(){
 
 }
 
-// $(".nav-item a").click(function(){
-//     $(this).addClass("active");
-// });
-
-$(window).resize(function() {
-    drawPie();
-    drawChart();
-});
-
 function pindah1(){
     document.getElementById("satu").style.display= "block";
     document.getElementById("dua").style.display="none";
@@ -105,9 +96,71 @@ function pindah2(){
     document.getElementById("dua").style.display= "block";
       
 }
+function peta_covid(){
+    var peta = new google.maps.Map(document.getElementById("peta"), {
+        zoom: 5,
+        zoomControl: true,
+        center: new google.maps.LatLng(-1.4187812,117.9853305),
+        mapTypeId:google.maps.MapTypeId.ROADMAP,
 
+    });
+    $.ajax({
+        url : 'https://services5.arcgis.com/VS6HdKS0VfIhv8Ct/arcgis/rest/services/COVID19_Indonesia_per_Provinsi/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json',
+        method : 'GET',
+        dataType : 'JSON',
+        success : function(data) {
+            $.each(data['features'],function(i,val){
+                if(i<34){
+                    var konten =
+                        "<h6>Informasi Covid-19 Tiap Provinsi Di Indonesia</h6>"+new Date().toLocaleString()+
+                        "<hr style=height:2px;border-width:0;color:black;background-color:black;opacity: 0.5;>"+
+                        "<table class=table table-striped>"+
+                            "<tbody class=font-weight-bold>"+
+                                "<tr class=table-secondary>"+
+                                    "<td > Provinsi</td>"+
+                                    "<td>"+data['features'][i]['attributes']['Provinsi']+"</td>"+
+                                "</tr>"+
+                                "<tr>"+
+                                    "<td>Jumlah Terinfeksi </td>"+
+                                    "<td>"+data['features'][i]['attributes']['Kasus_Posi']+"</td>"+
+                                "</tr>"+
+                                "<tr class=table-secondary>"+
+                                    "<td>Sembuh </td>"+
+                                    "<td>"+data['features'][i]['attributes']['Kasus_Semb']+"</td>"+
+                                "</tr>"+
+                                "<tr>"+
+                                    "<td>Meninggal </td>"+
+                                    "<td>"+data['features'][i]['attributes']['Kasus_Meni']+"</td>"+
+                                "</tr>"+
+                            "</tbody>"+
+                        "</table>";
 
+                    var info_label = new google.maps.InfoWindow({
+                        content: konten,
+                    });
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(data['features'][i]['geometry']['y'],data['features'][i]['geometry']['x']),
+                        map: peta,
+                        title:data['features'][i]['attributes']['Provinsi'],
+                        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|ddd',
 
+                    });
+                    marker.addListener("click", function () {
+                        info_label.open(peta, marker);
+                    });
+                }
+            });
+            console.log(data['features'][0])
+        }
+
+    });
+ }
+
+$(window).resize(function() {
+    drawPie();
+    drawChart();
+    peta_covid();
+});
 
 
 

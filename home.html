@@ -23,6 +23,8 @@
         <script src="js/home_get.js"></script>
         <link rel="icon" href="./assets/favicon1.PNG" />
         <link rel="stylesheet" href="css/home.css" type="text/css" />
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=peta_covid"></script>
     </head>
     <body>
         <div class="landing-pict">
@@ -58,6 +60,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#infografik">Grafik</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#peta_cov">Peta</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#info_covid">Kasus</a>
@@ -225,9 +230,34 @@
                     </div>
                 </div>
             </div>
+            <!-- Peta Persebaran -->
+            <div id="peta_cov">
+                <hr id="peta_cov" style="height: 2px; border-width: 0; color: gray; background-color: gray; opacity: 0.5; margin-bottom: 80px;" />
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="warna">
+                        Peta COVID-19<b><span style="color: orange;">.</span></b>
+                    </h3>
+                    <p>Peta Persebaran COVID-19 Tiap Provinsi di <b>Indonesia.</b></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-5">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div id="peta" style="width: 100%; height: 450px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+       
             <!-- Teks konten narasi  -->
-            <div id="konten">
-                <hr id="konten" style="height: 2px; border-width: 0; color: gray; background-color: gray; opacity: 0.5; margin-bottom: 100px;" />
+            <div id="konten" >
+                <hr id="konten" style="height: 2px; border-width: 0; color: gray; background-color: gray; opacity: 0.5; margin-bottom: 80px;" />
             </div>
              <div class="container">
                 <div class="row">
@@ -385,15 +415,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 mt-4 d-flex justify-content-center">
-                            <p style="color: white;font-size: 14px;">@Copyright COV.ID 2020. Developed <span class="fa fa-heart"></span> By 
+                            <p style="color: white;font-size: 14px;">@Copyright covidindonesia.id 2020. Developed <span class="fa fa-heart"></span> By 
                             </p>
                         </div>
                     </div>                        
                     <div class="row pb-3">
                         <div class="col-12 d-flex justify-content-center" style="color: #ffff;">
                             <span>
-                                <a style="color: white;" href="https://www.instagram.com/yafiesetyo/?hl=id">Yafie Setyo</a>,
                                 <a style="color: white;" href="https://www.instagram.com/brahmasuryaa/?hl=id">Brahma Surya</a>,
+                                <a style="color: white;" href="https://www.instagram.com/yafiesetyo/?hl=id">Yafie Setyo</a>,
                                 <a style="color: white;" href="https://www.instagram.com/satriaamien/?hl=id">Satria Amien</a> 
                             </span>
                         </div>
